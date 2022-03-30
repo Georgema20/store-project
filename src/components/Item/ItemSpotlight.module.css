@@ -1,0 +1,157 @@
+.container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.miniContainer {
+  height: 50%;
+  width: 100%;
+  padding: 4rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  background: white;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.image {
+  height: 150px;
+  width: 150px;
+}
+
+.yellow {
+  border: 10px solid #fdeeb3;
+}
+
+.red {
+  border: 10px solid #f6ccd0;
+}
+
+.blue {
+  border: 10px solid #b4dce3;
+}
+
+.brown {
+  border: 10px solid #d9cbc2;
+}
+
+.desc {
+  font-size: 0.8rem;
+  width: 70%;
+  text-align: center;
+  background: #bbdccb;
+  padding: 1rem;
+  border-radius: 20%;
+}
+
+.button {
+  background: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  font-size: 1.1rem;
+  z-index: 0;
+  padding: 0.5rem;
+  background-color: #bbdccb;
+}
+
+.button:hover {
+  border: 5px solid black;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-device-width: 1000px) {
+  .container {
+    min-height: 90vh;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .desc {
+    font-size: 1.5rem;
+  }
+
+  .image {
+    height: 250px;
+    width: 250px;
+  }
+
+  .button:hover {
+    border: 5px solid black;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .button {
+    padding: 1.4rem;
+  }
+
+  .yellow {
+    border: 20px solid #fdeeb3;
+  }
+
+  .red {
+    border: 20px solid #f6ccd0;
+  }
+
+  .blue {
+    border: 20px solid #b4dce3;
+  }
+
+  .brown {
+    border: 20px solid #d9cbc2;
+  }
+}
+
+@media (max-device-width: 450px) {
+  .container {
+    min-height: 95vh;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .desc {
+    font-size: 2rem;
+  }
+
+  .image {
+    height: 300px;
+    width: 300px;
+  }
+
+  .button:hover {
+    border: 7px solid black;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  .button {
+    padding: 1.6rem;
+  }
+}

@@ -86,6 +86,30 @@
   z-index: 0;
 }
 
+.infoButton {
+  background: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform: translate(-80px, 42px);
+  border: 2px solid black;
+  font-size: 1.2rem;
+  z-index: 0;
+  font-style: italic;
+  padding-right: 2.5px;
+}
+
+.infoButton:hover {
+  border: 3px solid black;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .addButton:hover {
   border: 3px solid black;
   font-size: 1.5rem;
