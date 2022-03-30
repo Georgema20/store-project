@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.foodContainer {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  min-height: 65vh;
+  padding-bottom: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 1rem;
+}
+
+@media (max-width: 1300px) {
+  .foodContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .foodContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .foodContainer {
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+@media (max-device-width: 1300px) {
+  .foodContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-device-width: 1000px) {
+  .foodContainer {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 7%;
+  }
+}
+
+@media (max-device-width: 300px) {
+  .foodContainer {
+    flex-direction: column;
+    display: flex;
+  }
+}

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 1rem;
+  padding-top: 3rem;
+}
+
+.sentence {
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.input {
+  margin-left: 0.75rem;
+  font-style: italic;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  height: 45px;
+}
+
+.input::selection {
+  border: #bbdccb;
+}
+
+@media (max-width: 530px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

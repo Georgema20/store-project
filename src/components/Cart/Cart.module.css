@@ -1,0 +1,145 @@
+.container {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.smallContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  border-radius: 10%;
+  margin: 4rem 0rem;
+  border: 5px solid #bbdccb;
+  min-width: 500px;
+}
+
+.smallContainerNoOrders {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  border-radius: 10%;
+  margin: 4rem 0rem;
+  min-width: 400px;
+  text-align: center;
+  font-style: italic;
+}
+
+.items {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.item {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding-top: 1rem;
+  padding-right: 3rem;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1.4rem 0rem;
+}
+
+.buttonClose {
+  border-radius: 10%;
+  background: #d9cbc2;
+  padding: 1rem;
+}
+
+.buttonClear {
+  border-radius: 10%;
+  background: #f6ccd0;
+  padding: 1rem 3rem;
+  margin-bottom: 2rem;
+}
+
+.buttonClear:hover {
+  padding: 1.2rem 3.3rem;
+  cursor: pointer;
+}
+
+.buttonClose:hover {
+  padding: 1.1rem;
+  cursor: pointer;
+}
+
+.buttonOrder {
+  border-radius: 10%;
+  background: #bbdccb;
+  padding: 1rem;
+}
+
+.buttonOrder:hover {
+  padding: 1.1rem;
+  cursor: pointer;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  margin: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.addSub {
+  border-radius: 50%;
+  background: black;
+  color: white;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-style: normal;
+}
+
+.addSub:hover {
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+}
+
+.name {
+  min-width: 270px;
+}
+
+@media (max-device-width: 1000px) {
+  .smallContainerNoOrders {
+    min-height: 94vh;
+  }
+}

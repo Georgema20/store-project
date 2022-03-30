@@ -1,0 +1,60 @@
+.container {
+  width: 50%;
+  margin: auto;
+  background: #bbdccb;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+input {
+  width: 88%;
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+  padding: 0.2rem;
+}
+
+.button {
+  border-radius: 10%;
+  background: #d9cbc2;
+  padding: 1rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  padding: 1.2rem;
+  font-size: 0.8rem;
+}
+
+.buttonContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  font-size: 0.6rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 88%;
+}
+
+.nameInput {
+  width: 110px;
+  min-width: 110px;
+  margin-bottom: 1rem;
+  line-height: 1.6rem;
+  padding: 0.2rem;
+}

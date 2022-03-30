@@ -1,0 +1,25 @@
+.container {
+  min-height: 60vh;
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.phrase {
+  font-style: italic;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-device-width: 1000px) {
+  .container {
+    min-height: 87vh;
+  }
+}

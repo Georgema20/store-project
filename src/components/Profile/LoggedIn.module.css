@@ -1,0 +1,26 @@
+.logout {
+  padding: 1rem;
+  background: #bbdccb;
+  width: 300px;
+  text-align: center;
+  border-radius: 10%;
+  margin: auto;
+}
+
+.logout:hover {
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 1.2rem;
+}
+
+.container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text {
+  text-align: center;
+}
