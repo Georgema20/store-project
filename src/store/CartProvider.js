@@ -76,15 +76,28 @@ const CartProvider = (props) => {
   const [name, setName] = useState('');
   const [prevCart, setPrevCart] = useState({ items: [], amount: 0 });
   const [email, setEmail] = useState('');
+  const [shine, setShine] = useState(false);
 
   const addItemFunc = (item) => {
     dispatch({ type: 'add', item: item });
     setNum(num + 1);
+    setShine(true);
+    console.log('hit');
+    setTimeout(() => {
+      setShine(false);
+    }, 500);
+    console.log('hit again');
   };
 
   const removeItemFunc = (item) => {
     dispatch({ type: 'remove', item: item });
     setNum(num - 1);
+    console.log('hit');
+    setShine(true);
+    setTimeout(() => {
+      setShine(false);
+    }, 500);
+    console.log('hit again');
   };
 
   const clearCartFunc = () => {
@@ -117,6 +130,7 @@ const CartProvider = (props) => {
     changePrevCart: setPrevCart,
     email: email,
     setEmail: setEmail,
+    shine: shine,
   };
 
   return (

@@ -17,7 +17,11 @@ const Header = (props) => {
             Poke Place
           </h1>
         </div>
-        <div className={styles.button}>
+        <div
+          className={
+            Ctx.shine ? [styles.button, styles.shine].join(' ') : styles.button
+          }
+        >
           <FontAwesomeIcon
             className={styles.icon}
             icon={faCartShopping}

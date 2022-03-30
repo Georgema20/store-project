@@ -45,7 +45,7 @@ const Cart = (props) => {
               <img src={item.img} alt={item.name} />
             </div>
             <h3 className={styles.name}>{item.name}</h3>
-            <h3>${item.amount * item.price}</h3>
+            <h3 className={styles.price}>${item.amount * item.price}</h3>
             {props.prev === 'true' ? (
               ' '
             ) : (

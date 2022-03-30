@@ -5,11 +5,13 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  z-index: 100;
 }
 
 .footerContainer {
   position: sticky;
   bottom: 0px;
+  z-index: 100;
 }
 
 .diagonal {
