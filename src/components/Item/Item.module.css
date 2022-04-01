@@ -89,19 +89,20 @@
 .infoButton {
   background: white;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  transform: translate(-80px, 42px);
+  transform: translate(-80px, 41px);
   border: 2px solid black;
   font-size: 1.2rem;
   z-index: 0;
   font-style: italic;
   padding-right: 2.5px;
+  color: black !important;
 }
 
 .infoButton:hover {
@@ -138,4 +139,12 @@
   border-radius: 20%;
   padding: 0.55rem;
   border: 2px solid black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a {
+  color: black;
 }

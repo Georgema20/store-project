@@ -42,7 +42,6 @@ const cartReducer = (state, action) => {
   }
   if (action.type === 'remove') {
     const newAmount = state.totalAmount - action.item.price;
-    console.log(action.item);
     const existingIndex = state.items.findIndex(
       (item) => item.id === action.item.id
     );
@@ -82,22 +81,18 @@ const CartProvider = (props) => {
     dispatch({ type: 'add', item: item });
     setNum(num + 1);
     setShine(true);
-    console.log('hit');
     setTimeout(() => {
       setShine(false);
     }, 500);
-    console.log('hit again');
   };
 
   const removeItemFunc = (item) => {
     dispatch({ type: 'remove', item: item });
     setNum(num - 1);
-    console.log('hit');
     setShine(true);
     setTimeout(() => {
       setShine(false);
     }, 500);
-    console.log('hit again');
   };
 
   const clearCartFunc = () => {
@@ -110,8 +105,6 @@ const CartProvider = (props) => {
   };
 
   const changeNameFunc = (name) => {
-    console.log('Called changeNameFunc() in cart provider');
-    console.log('Changing Name to ' + name);
     setName(name);
   };
 

@@ -17,9 +17,8 @@ const ProfilePage = () => {
   const isLoggedIn = Ctx.loggedIn;
 
   async function changeNameFunc(email) {
-    console.log('Called changeNameFunc() in profile');
+  
     const name = await FS.logInUser(email);
-    console.log('NAME IS' + name);
     Ctx.changeName(name);
     //Get Cart
     const prevCart = await FS.getPrevCart(email);

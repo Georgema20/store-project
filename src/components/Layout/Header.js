@@ -4,31 +4,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import ProfilePic from './ProfilePic';
 import CartContext from '../../store/cart-context';
+import { NavLink } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = () => {
   const Ctx = useContext(CartContext);
 
   return (
     <div className={styles.headerContainer}>
       <header className={styles.header}>
         <div className={styles.topLeft}>
-          <ProfilePic profileFunc={props.profileFunc} />
-          <h1 className={styles.title} onClick={props.pokeFunc}>
-            Poke Place
-          </h1>
+          <NavLink to="/profile">
+            <ProfilePic />
+          </NavLink>
+          <NavLink to="/food">
+            <h1 className={styles.title}>Poke Place</h1>
+          </NavLink>
         </div>
-        <div
-          className={
-            Ctx.shine ? [styles.button, styles.shine].join(' ') : styles.button
-          }
-        >
-          <FontAwesomeIcon
-            className={styles.icon}
-            icon={faCartShopping}
-            onClick={props.cartFunc}
-          />
-          <h3 className={styles.number}>{Ctx.numInCart}</h3>
-        </div>
+        <NavLink to="/cart">
+          <div
+            className={
+              Ctx.shine
+                ? [styles.button, styles.shine].join(' ')
+                : styles.button
+            }
+          >
+            <FontAwesomeIcon className={styles.icon} icon={faCartShopping} />
+            <h3 className={styles.number}>{Ctx.numInCart}</h3>
+          </div>
+        </NavLink>
       </header>
       <div className={styles.diagonal}></div>
     </div>

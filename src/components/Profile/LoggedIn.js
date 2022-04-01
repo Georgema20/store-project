@@ -5,9 +5,6 @@ import { useContext } from 'react';
 
 const LoggedIn = (props) => {
   const Ctx = useContext(CartContext);
-
-  console.log('In logged In');
-  console.log(Ctx.prevCart);
   return (
     <div className={styles.container}>
       <h1 className={styles.text}>Hi {Ctx.firstName}!</h1>

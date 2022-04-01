@@ -3,3 +3,7 @@
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
 }
+
+.cartContainer {
+  min-height: 90vh;
+}

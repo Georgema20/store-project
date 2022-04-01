@@ -1,6 +1,7 @@
 import styles from './Item.module.css';
 import { useContext } from 'react';
 import CartContext from '../../store/cart-context';
+import { NavLink } from 'react-router-dom';
 
 const Item = (props) => {
   let color = (color) => {
@@ -30,18 +31,6 @@ const Item = (props) => {
     });
   };
 
-  const spotlightHandler = () => {
-    props.spotlight({
-      id: props.id,
-      name: props.title,
-      amount: 1,
-      img: props.img,
-      price: props.price,
-      desc: props.desc,
-      color: props.color,
-    });
-  };
-
   return (
     <div className={color(props.color)}>
       <h2 className={styles.title}>{props.title}</h2>
@@ -50,8 +39,9 @@ const Item = (props) => {
       <div className={styles.addButton} onClick={addHandler}>
         +
       </div>
-      <div className={styles.infoButton} onClick={spotlightHandler}>
-        i
+
+      <div className={styles.infoButton}>
+        <NavLink to={'/food/' + props.id}>i</NavLink>
       </div>
       <p className={styles.description}>{props.desc}</p>
     </div>

@@ -1,10 +1,21 @@
 import styles from './Cart.module.css';
 import CartContext from '../../store/cart-context';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import FireStore from '../../FireStore/FireStore';
 
 const Cart = (props) => {
   const Ctx = useContext(CartContext);
+  const [screenText, setScreenText] = useState({
+    p1: 'You have not ordered anything yet...',
+    p2: 'Please order something!',
+  });
+
+  const clearText = () => {
+    setScreenText({
+      p1: 'You have not ordered anything yet...',
+      p2: 'Please order something!',
+    });
+  };
 
   const FS = new FireStore();
 
@@ -17,6 +28,13 @@ const Cart = (props) => {
   };
 
   const submitHandler = () => {
+    setScreenText({
+      p1: 'Your order went through!',
+      p2: 'Since this is not real - this demo is gonna revert back to its original form in 2 seconds',
+    });
+
+    setTimeout(clearText, 3000);
+
     if (Ctx.loggedIn) {
       FS.sendData({ items: Ctx.items, amount: Ctx.totalAmount }, Ctx.email);
       Ctx.changePrevCart({ items: Ctx.items, amount: Ctx.totalAmount });
@@ -32,8 +50,6 @@ const Cart = (props) => {
     Items = Ctx.prevCart.items;
     Amount = Ctx.prevCart.amount;
   }
-
-  console.log(Items);
 
   const cartItems = (
     <ul className={styles.items}>
@@ -121,8 +137,8 @@ const Cart = (props) => {
         </div>
       ) : (
         <div className={styles.smallContainerNoOrders}>
-          <h1>You have not ordered anything yet...</h1>
-          <p>Please order something!</p>
+          <h1 className={styles.text}>{screenText.p1}</h1>
+          <p className={styles.text}>{screenText.p2}</p>
         </div>
       )}
     </div>

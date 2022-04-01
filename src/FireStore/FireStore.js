@@ -30,7 +30,7 @@ class FireStore {
         last: lName,
         email: email.toLowerCase(),
         pass: pass,
-        lastOrder: [],
+        lastOrder: { items: [], amount: 0 },
       })
       .then((docRef) => {
         // console.log('Success');
@@ -41,7 +41,6 @@ class FireStore {
   }
 
   async logInUser(email) {
-    console.log('called logInUser in firestore');
     let user = this.db.collection('users').doc(email.toLowerCase());
 
     let name = '';
@@ -50,14 +49,10 @@ class FireStore {
       .get()
       .then((doc) => {
         if (doc.exists) {
-          console.log('get first name from firestore');
           const data = doc.data();
           name = data.first;
-          console.log(name);
         } else {
-          console.log('nope');
         }
-        console.log(name);
       })
       .catch((error) => {
         console.log('Error getting document:', error);
@@ -67,8 +62,7 @@ class FireStore {
   }
 
   sendData(food, email) {
-    console.log(food);
-    console.log(email);
+  
     this.db
       .collection('users')
       .doc(email.toLowerCase())
@@ -95,11 +89,9 @@ class FireStore {
       .get()
       .then((doc) => {
         if (doc.exists) {
-          console.log('get first name from firestore');
           const data = doc.data();
           prevCart = data.lastOrder;
         } else {
-          console.log('nope');
         }
       })
       .catch((error) => {

@@ -1,6 +1,9 @@
 import styles from './ItemSpotlight.module.css';
 import { useContext } from 'react';
 import CartContext from '../../store/cart-context';
+import FoodItems from '../../data/Food';
+import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ItemSpotlight = (props) => {
   const Ctx = useContext(CartContext);
@@ -20,33 +23,52 @@ const ItemSpotlight = (props) => {
     }
   };
 
+  const getFood = (id) => {
+    const existingIndex = FoodItems.findIndex((item) => item.id === id);
+    const tempFood = FoodItems[existingIndex];
+
+    return {
+      id: tempFood.id,
+      name: tempFood.title,
+      img: tempFood.img,
+      price: tempFood.price,
+      desc: tempFood.desc,
+      color: border(tempFood.color),
+    };
+  };
+
+  const params = useParams();
+  const food = getFood(params.id);
+
   const addHandler = () => {
     Ctx.addItem({
-      id: props.item.id,
-      name: props.item.title,
+      id: food.id,
+      name: food.title,
       amount: 1,
-      img: props.item.img,
-      price: props.item.price,
+      img: food.img,
+      price: food.price,
     });
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.miniContainer}>
-        <h1 className={styles.title}>{props.item.name}</h1>
-        <p className={styles.desc}>{props.item.desc}</p>
+        <h1 className={styles.title}>{food.name}</h1>
+        <p className={styles.desc}>{food.desc}</p>
         <img
-          className={[styles.image, border(props.item.color)].join(' ')}
-          src={props.item.img}
+          className={[styles.image, border(food.color)].join(' ')}
+          src={food.img}
           alt="food"
         />
 
         <div className={styles.buttons}>
-          <div className={styles.button} onClick={props.back}>
-            Back
-          </div>
+          <NavLink to="/food">
+            <div className={styles.button} onClick={props.back}>
+              Back
+            </div>
+          </NavLink>
           <div className={styles.button} onClick={addHandler}>
-            +${props.item.price}
+            +${food.price}
           </div>
         </div>
       </div>

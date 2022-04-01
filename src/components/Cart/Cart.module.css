@@ -6,7 +6,6 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  min-height: 50vh;
 }
 
 .smallContainer {
@@ -34,7 +33,6 @@
   min-width: 400px;
   text-align: center;
   font-style: italic;
-  min-height: 70vh;
 }
 
 .items {
@@ -144,11 +142,7 @@ img {
   min-width: 270px;
 }
 
-@media (max-device-width: 1000px) {
-  .smallContainerNoOrders {
-    min-height: 94vh;
-  }
-  .container {
-    min-height: 94vh;
-  }
+.text {
+  font-style: italic;
+  text-align: center;
 }
